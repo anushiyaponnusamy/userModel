@@ -1,0 +1,80 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Last Name</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Role</th>
+            <th scope="col">State</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of userInfo">
+            <td>
+                <div *ngIf="user.isEdit">
+                    <input type="text" [(ngModel)]="user.lastName" class="form-control" />
+                </div>
+                <div *ngIf="!user.isEdit">
+                    {{user.lastName}}
+                </div>
+            </td>
+
+            <td>
+                <div *ngIf="user.isEdit">
+                    <input type="text" [(ngModel)]="user.firstName" class="form-control" />
+                </div>
+                <div *ngIf="!user.isEdit">
+                    {{user.firstName}}
+                </div>
+            </td>
+            <td>
+                <div *ngIf="user.isEdit">
+                    <input type="text" [(ngModel)]="user.email" class="form-control" />
+                </div>
+                <div *ngIf="!user.isEdit">
+                    {{user.email}}
+                </div>
+            </td>
+            <td>
+                <div *ngIf="user.isEdit">
+                    <input type="text" [(ngModel)]="user.phoneNumber" class="form-control" />
+                </div>
+                <div *ngIf="!user.isEdit">
+                    {{user.phoneNumber}}
+                </div>
+            </td>
+            <td>
+                <div *ngIf="user.isEdit">
+                    <input type="text" [(ngModel)]="user.role" class="form-control" />
+                </div>
+                <div *ngIf="!user.isEdit">
+                    {{user.role}}
+                </div>
+            </td>
+            <td>
+                <div *ngIf="user.isEdit">
+                    <input type="text" [(ngModel)]="user.state" class="form-control" />
+                </div>
+                <div *ngIf="!user.isEdit">
+                    {{user.state}}
+                </div>
+            </td>
+            <td>
+                <div *ngIf="user.isEdit||!isUpdate">
+                    <button class="btn btn-sm btn-primary" (click)="onEdit(user);onchangeEdit();isUpdate=true;user.isEdit=false">update
+
+                    </button>
+                </div>
+                <div *ngIf="!user.isEdit">
+                    <button (click)="onEdit(user)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </div>
+                
+            </td>
+        </tr>
+
+    </tbody>
+</table>
