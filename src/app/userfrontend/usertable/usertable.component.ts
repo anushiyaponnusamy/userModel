@@ -19,16 +19,16 @@ export class UsertableComponent implements OnInit {
      this.userInfo=res.data;
    })
  }
- userdetails=[{
+//  userdetails=[{
   
-    "lastName":"", 
-    "firstName":"",
-     "email":"",
-      "phoneNumber":"",
-       "role":"",
-        "state":""
+//     "lastName":"", 
+//     "firstName":"",
+//      "email":"",
+//       "phoneNumber":"",
+//        "role":"",
+//         "state":""
   
- }]
+//  }]
  isUpdate=true;
  onchangeEdit(){
 this.isUpdate=!this.isUpdate;
